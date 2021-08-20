@@ -6,15 +6,23 @@ div.issue {
   font-family: "Poppins", sans-serif;
 }
 div.issue h2,
-label {
+main form label {
   color: rgb(240, 240, 240);
 }
-main {
+
+div.issue h2 {
+  width: 100%;
+  height: 10vh;
+  font-size: 32px;
+  text-align: center;
+  line-height: 10vh;
+}
+div.issue main {
   width: 100%;
   height: 90vh;
 }
 
-form {
+main form {
   width: 100%;
   height: 100%;
   display: flex;
@@ -23,13 +31,13 @@ form {
   align-items: center;
 }
 
-label {
+main form label {
   font-size: 24px;
   padding: 12px 0;
 }
 
-input,
-textarea {
+main form input,
+main form textarea {
   width: 50%;
   padding: 4px 10px;
   border: 2px solid black;
@@ -38,20 +46,12 @@ textarea {
   border-radius: 4px;
 }
 
-input:focus,
-textarea:focus {
+main form input:focus,
+main form textarea:focus {
   border: 2px solid rgb(240, 240, 240);
 }
 
-h2 {
-  width: 100%;
-  height: 10vh;
-  font-size: 32px;
-  text-align: center;
-  line-height: 10vh;
-}
-
-button {
+main form button {
   position: relative;
   margin: 20px 0;
   font-size: 20px;
@@ -62,7 +62,7 @@ button {
   color: rgb(240, 240, 240);
   overflow: hidden;
 }
-button::after {
+main form button::after {
   content: "";
   width: 100%;
   height: 2px;
@@ -73,19 +73,19 @@ button::after {
   transition: 0.2s;
   border-radius: 6px;
 }
-button:hover {
+main form button:hover {
   background-color: rgba(0, 0, 0, 0.3);
 }
-button:hover::after {
+main form button:hover::after {
   left: 0;
 }
 
-input.active {
+main form input.active {
   background-color: rgba(180, 0, 0, 0.3);
   color: rgb(240, 240, 240);
 }
 
-textarea.active {
+main form textarea.active {
   background-color: rgba(180, 0, 0, 0.3);
   color: rgb(240, 240, 240);
 }
