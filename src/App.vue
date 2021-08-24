@@ -2,7 +2,7 @@
   <div class="issue">
     <h2>Formularz zgłoszeniowy</h2>
     <main>
-      <form>
+      <form @submit.prevent="sendIssue">
         <label for="title">Tytuł zgłoszenia</label>
         <input
           type="text"
@@ -31,7 +31,7 @@
           rows="10"
           v-model="issueDescription"
         ></textarea>
-        <button class="sendIssue" value="issues" @click="sendIssue">
+        <button class="sendIssue" value="issues">
           Wyślij zgłoszenie
         </button>
       </form>
