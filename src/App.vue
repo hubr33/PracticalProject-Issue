@@ -2,7 +2,7 @@
   <div class="issue">
     <h2>Formularz zgłoszeniowy</h2>
     <main>
-      <form @submit.prevent="sendIssue">
+      <form>
         <label for="title">Tytuł zgłoszenia</label>
         <input
           type="text"
@@ -31,7 +31,9 @@
           rows="10"
           v-model="issueDescription"
         ></textarea>
-        <button class="sendIssue">Wyślij zgłoszenie</button>
+        <button class="sendIssue" value="issues" @click="sendIssue">
+          Wyślij zgłoszenie
+        </button>
       </form>
     </main>
   </div>
@@ -49,6 +51,19 @@ export default {
     };
   },
   methods: {
+    saveData() {
+      let Issue = {
+        caseType: "issue",
+        issueTitle: this.issueTitle,
+        issueName: this.issueName,
+        issueSurname: this.issueSurname,
+        issueDate: this.issueDate,
+        issueDescription: this.issueDescription,
+      };
+      this.coachViewContext.binding.set("value", Issue);
+      this.coachViewContext.trigger();
+      console.log(Issue);
+    },
     sendIssue() {
       const allInputs = document.querySelectorAll(".issue form input");
       const textArea = document.querySelector(".issue form textarea");
@@ -59,6 +74,7 @@ export default {
         this.issueDate !== "" &&
         this.issueDescription !== ""
       ) {
+        this.saveData();
         (this.issueTitle = ""),
           (this.issueName = ""),
           (this.issueSurname = ""),
